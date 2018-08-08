@@ -26,6 +26,15 @@ class ExampleUnitTest {
         assertEquals(1, vm.scoreTeamB.value)
     }
 
+    @Test
+    fun testeReset(){
+        val vm = getViewModel()
+        vm.resetScores()
+
+        assertEquals(0, vm.scoreTeamA.value)
+        assertEquals(0, vm.scoreTeamB.value)
+    }
+
     private fun getViewModel(): ScoreViewModel {
         val activity = Robolectric.setupActivity(MainActivity::class.java)
         return ViewModelProviders.of(activity).get(ScoreViewModel::class.java)
