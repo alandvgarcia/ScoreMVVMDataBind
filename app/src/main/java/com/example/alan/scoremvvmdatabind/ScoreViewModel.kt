@@ -20,4 +20,9 @@ class ScoreViewModel : ViewModel() {
         score.value = value + 1
     }
 
+    fun resetScores() {
+        scoreTeamA.value = 0
+        scoreTeamB.value = 0
+    }
+
 }

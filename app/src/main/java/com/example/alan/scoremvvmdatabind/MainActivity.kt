@@ -17,6 +17,7 @@ class MainActivity : AppCompatActivity() {
 
         buttonTeamA.setOnClickListener { viewModel.updateTeamA() }
         buttonTeamB.setOnClickListener { viewModel.updateTeamB() }
+        buttonReset.setOnClickListener { viewModel.resetScores() }
 
         viewModel.scoreTeamA.observe(this, Observer { value ->
             textTeamA.text = value.toString()
