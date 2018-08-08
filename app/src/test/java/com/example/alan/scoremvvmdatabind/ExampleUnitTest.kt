@@ -19,11 +19,12 @@ class ExampleUnitTest {
     @Test
     fun testeChangeScore() {
         val vm = getViewModel()
+
         vm.updateTeamA()
-        assertEquals(1, vm.scoreTeamA.value)
+        assertEquals(1, vm.score.teamA)
 
         vm.updateTeamB()
-        assertEquals(1, vm.scoreTeamB.value)
+        assertEquals(1, vm.score.teamB)
     }
 
     @Test
@@ -31,8 +32,8 @@ class ExampleUnitTest {
         val vm = getViewModel()
         vm.resetScores()
 
-        assertEquals(0, vm.scoreTeamA.value)
-        assertEquals(0, vm.scoreTeamB.value)
+        assertEquals(0, vm.score.teamA)
+        assertEquals(0, vm.score.teamB)
     }
 
     private fun getViewModel(): ScoreViewModel {

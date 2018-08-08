@@ -1,28 +1,21 @@
 package com.example.alan.scoremvvmdatabind
 
-import android.arch.lifecycle.MutableLiveData
 import android.arch.lifecycle.ViewModel
 
 class ScoreViewModel : ViewModel() {
-    var scoreTeamA = MutableLiveData<Int>().apply { value = 0 }
-    var scoreTeamB = MutableLiveData<Int>().apply { value = 0 }
+    var score = Score()
 
     fun updateTeamA() {
-        update(scoreTeamA)
+        score.teamA++
     }
 
     fun updateTeamB() {
-        update(scoreTeamB)
-    }
-
-    private fun update(score: MutableLiveData<Int>) {
-        val value = score.value ?: 0
-        score.value = value + 1
+        score.teamB++
     }
 
     fun resetScores() {
-        scoreTeamA.value = 0
-        scoreTeamB.value = 0
+        score.teamA = 0
+        score.teamB = 0
     }
 
 }
