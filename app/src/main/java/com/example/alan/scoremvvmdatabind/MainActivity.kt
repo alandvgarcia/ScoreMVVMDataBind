@@ -8,7 +8,6 @@ import kotlinx.android.synthetic.main.mainactivity.*
 
 class MainActivity : AppCompatActivity() {
 
-
     private val viewModel: ScoreViewModel by lazy { ViewModelProviders.of(this).get(ScoreViewModel::class.java) }
 
     override fun onCreate(savedInstanceState: Bundle?) {
